@@ -18,4 +18,6 @@ class Template:
     def save(self, helper):
         if not helper.existTable(self.tableName):
             helper.createTable(self.tableName, self.fmt)
+            if helper.existTable('tables'):
+                helper.insertColiotTable(self.tableName)
         helper.insert(self.tableName, self.fmt)

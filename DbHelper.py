@@ -88,6 +88,19 @@ class DbHelper:
         else:
             return True
 
+    def insertColiotTable(self, table):
+        id = '1'
+        self.cursor.execute('SELECT id FROM tables ORDER BY id DESC LIMIT 1;')
+        row = self.cursor.fetchone()
+        if row:
+            id = str(row[0] + 1)
+
+        self.cursor.execute(
+            "INSERT INTO tables VALUES (strftime('%Y-%m-%d %H:%M:%f',datetime('now', 'localtime')),strftime('%Y-%m-%d %H:%M:%f',datetime('now', 'localtime'))," + id + ",'"
+            + table + "',NULL,NULL,1,NULL,NULL,0,NULL,0,NULL,NULL,NULL,NULL,NULL,'[main].[" + table + "](id:" + id + ")',0,NULL,0,NULL)")
+        self.connection.commit()
+        self.logger.info("SAVE coliot tables")
+
     def close(self):
         # Close database
         self.connection.commit()
