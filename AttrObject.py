@@ -7,9 +7,9 @@ class AttrObject:
 
     def getType(self):
         return {
-            int: "INTEGER",
-            float: "REAL",
-            str: "TEXT"
+            'uint64': "INTEGER",
+            'double': "REAL",
+            'string': "TEXT"
         }.get(self.type, self.type)
 
     def getName(self):

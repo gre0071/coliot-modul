@@ -1,0 +1,10 @@
+uint64 ID,double TIME,string cmd
+1101,1542317453.000000,"BeeeOn::ServerDeviceListCommand jablotron"
+1101,1542317453.000000,"BeeeOn::ServerDeviceListCommand psdev"
+1101,1542317453.000000,"BeeeOn::ServerDeviceListCommand vdev"
+1101,1542317453.000000,"BeeeOn::ServerDeviceListCommand vpt"
+1101,1542317453.000000,"BeeeOn::ServerDeviceListCommand bluetooth"
+1101,1542317453.000000,"BeeeOn::ServerDeviceListCommand belkin_wemo"
+1101,1542317453.000000,"BeeeOn::ServerDeviceListCommand zwave"
+1101,1542317453.000000,"BeeeOn::ServerDeviceListCommand philips_hue"
+1101,1542317453.000000,"BeeeOn::ServerDeviceListCommand ble_smart"
