@@ -19,5 +19,5 @@ class Template:
         if not helper.existTable(self.tableName):
             helper.createTable(self.tableName, self.fmt)
             if helper.existTable('tables'):
-                helper.insertColiotTable(self.tableName)
+                helper.insertColiotTable(self.tableName, self.fmt)
         helper.insert(self.tableName, self.fmt)

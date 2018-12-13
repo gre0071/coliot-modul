@@ -88,18 +88,43 @@ class DbHelper:
         else:
             return True
 
-    def insertColiotTable(self, table):
-        id = '1'
+    def insertColiotTable(self, table, args):
+        table_id = '1'
         self.cursor.execute('SELECT id FROM tables ORDER BY id DESC LIMIT 1;')
         row = self.cursor.fetchone()
         if row:
-            id = str(row[0] + 1)
+            table_id = str(row[0] + 1)
 
         self.cursor.execute(
-            "INSERT INTO tables VALUES (strftime('%Y-%m-%d %H:%M:%f',datetime('now', 'localtime')),strftime('%Y-%m-%d %H:%M:%f',datetime('now', 'localtime'))," + id + ",'"
-            + table + "',NULL,NULL,1,NULL,NULL,0,NULL,0,NULL,NULL,NULL,NULL,NULL,'[main].[" + table + "](id:" + id + ")',0,NULL,0,NULL)")
+            "INSERT INTO tables VALUES (strftime('%Y-%m-%d %H:%M:%f',datetime('now', 'localtime')),strftime('%Y-%m-%d %H:%M:%f',datetime('now', 'localtime'))," + table_id + ",'"
+            + table + "',NULL,NULL,1,NULL,NULL,0,NULL,0,NULL,NULL,NULL,NULL,NULL,'[main].[" + table + "](id:" + table_id + ")',0,NULL,0,NULL)")
         self.connection.commit()
         self.logger.info("SAVE coliot tables")
+
+        column_id = 1
+        self.cursor.execute('SELECT id FROM table_columns ORDER BY id DESC LIMIT 1;')
+        row = self.cursor.fetchone()
+        if row:
+            column_id = row[0] + 1
+
+        value = ''
+        type = ''
+        for arg in args:
+            if arg.getName() == 'TIME':
+                value = 'TIME'
+                type = 'DATETIME'
+            else:
+                value = arg.getName()
+                type = arg.getType()
+
+            self.cursor.execute(
+                "INSERT INTO table_columns VALUES (strftime('%Y-%m-%d %H:%M:%f',datetime('now', 'localtime')),strftime('%Y-%m-%d %H:%M:%f',datetime('now', 'localtime')),"
+                + str(
+                    column_id) + "," + table_id + ",'" + value + "',0,1,'" + type + "',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)")
+            self.connection.commit()
+            column_id = column_id + 1
+
+        self.logger.info("SAVE coliot table_columns")
 
     def close(self):
         # Close database
