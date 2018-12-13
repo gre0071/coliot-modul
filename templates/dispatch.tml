@@ -1,0 +1,9 @@
+[MAIN]
+TemplateName = DispatchTemplate
+TableName = siot_dispatch
+Enable = true
+
+[FIELDS]
+ID = uint64
+TIME = double
+cmd = string

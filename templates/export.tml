@@ -1,0 +1,9 @@
+[MAIN]
+TemplateName = ExportTemplate
+TableName = siot_export
+Enable = true
+
+[FIELDS]
+ID = uint64
+TIME = double
+VALUE = double

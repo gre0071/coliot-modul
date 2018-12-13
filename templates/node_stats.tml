@@ -1,0 +1,18 @@
+[MAIN]
+TemplateName = NodeStatsTemplate
+TableName = siot_node_stats
+Enable = true
+
+[FIELDS]
+ID = uint64
+TIME = double
+averageRequestRTT = double
+averageResponseRTT = double
+lastRequestRTT = double
+lastResponseRTT = double
+quality = double
+receiveDuplications = double
+receiveUnsolicited = double
+receivedCount = double
+sentCount = double
+sentFailed = double

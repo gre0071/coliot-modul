@@ -1,0 +1,22 @@
+[MAIN]
+TemplateName = HciStatsTemplate
+TableName = siot_hci_stats
+Enable = true
+
+[FIELDS]
+ID = uint64
+TIME = double
+aclPackets = double
+address = double
+rxAcls = double
+rxBytes = double
+rxErrors = double
+rxEvents = double
+rxScos = double
+scoMtu = double
+scoPackets = double
+txAcls = double
+txBytes = double
+txCmds = double
+txErrors = double
+txScos = double

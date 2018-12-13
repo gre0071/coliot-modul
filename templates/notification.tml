@@ -1,0 +1,16 @@
+[MAIN]
+TemplateName = NotificationTemplate
+TableName = siot_notification
+Enable = true
+
+[FIELDS]
+TIME = double
+ID = uint64
+homeID = double
+nodeID = double
+GENRE = double
+CMDCLASS = double
+INSTANCE = double
+INDEX = double
+TYPE = double
+BYTE = double

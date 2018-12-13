@@ -1,0 +1,29 @@
+[MAIN]
+TemplateName = DriverStatsTemplate
+TableName = siot_driver_stats
+Enable = true
+
+[FIELDS]
+ID = uint64
+TIME = double
+ACKCount = double
+ACKWaiting = double
+CANCount = double
+NAKCount = double
+OOFCount = double
+SOFCount = double
+badChecksum = double
+badroutes = double
+broadcastReadCount = double
+broadcastWriteCount = double
+callbacks = double
+dropped = double
+netBusy = double
+noACK = double
+nonDelivery = double
+notIdle = double
+readAborts = double
+readCount = double
+retries = double
+routedBusy = double
+writeCount = double
