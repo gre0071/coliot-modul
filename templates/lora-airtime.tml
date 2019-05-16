@@ -1,0 +1,10 @@
+[MAIN]
+TemplateName = LoraAirtime
+TableName = siot_lora_airtime
+Enable = true
+
+[FIELDS]
+DEV_ADDR = string
+AIR_TIME = uint64
+TIMESTAMP = uint64
+PHY_PAYLOAD = string
