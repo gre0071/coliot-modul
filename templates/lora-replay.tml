@@ -1,0 +1,9 @@
+[MAIN]
+TemplateName = LoraReplay
+TableName = siot_lora_replay
+Enable = true
+
+[FIELDS]
+DEV_ADDR = string
+TIMESTAMP = uint64
+FCNT = string
