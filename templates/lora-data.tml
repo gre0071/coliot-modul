@@ -1,0 +1,13 @@
+[MAIN]
+TemplateName = LoraData
+TableName = siot_lora
+Enable = true
+
+[FIELDS]
+SIZE = uint32
+SF = uint32
+BAD_WIDTH = uint32
+CODE_RATE = uint32
+TIMESTAMP = uint64
+PHY_PAYLOAD = string
+RSSI = double
