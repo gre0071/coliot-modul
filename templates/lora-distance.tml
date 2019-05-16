@@ -1,0 +1,11 @@
+[MAIN]
+TemplateName = LoraDistance
+TableName = siot_lora_distance
+Enable = true
+
+[FIELDS]
+DEV_ADDR = string
+TIMESTAMP = uint64
+BASE_RSSI = double
+RSSI = double
+VARIANCE = double
