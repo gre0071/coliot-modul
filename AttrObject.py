@@ -8,8 +8,9 @@ class AttrObject:
     def getType(self):
         return {
             'uint64': "BIGINT",
-            'double': "FLOAT",
-            'string': "TEXT"
+            'double': "DOUBLE",
+            'string': "TEXT",
+            'macaddr': "TEXT"
         }.get(self.type, self.type)
 
     def getName(self):
@@ -20,6 +21,12 @@ class AttrObject:
     def getValue(self):
         if self.name == 'TIME':
             return "strftime('%Y-%m-%d %H:%M:%S',datetime('" + str(self.value) + "', 'unixepoch'))"
+        if self.name == 'TIMESTAMP':
+            if self.value == 'time':
+                return "strftime('%Y-%m-%d %H:%M:%S', '" + str(self.value) + "')"
+            return "strftime('%Y-%m-%d %H:%M:%S',datetime('" + str(long(self.value)) + "', 'unixepoch'))"
+        if self.type == 'uint64':
+            return long(self.value)
         return self.value
 
     def setType(self):

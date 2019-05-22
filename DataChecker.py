@@ -39,7 +39,9 @@ class DataChecker:
             return 0
         list = {}
         record = record.replace(" ", "")
+        record = record.replace("UnirecTime(", "")
         record = record.split(',')
         for rec in record:
-            list[rec.split('=')[0]] = rec.split('=')[1]
+            if '=' in rec:
+                list[rec.split('=')[0]] = rec.split('=')[1]
         return list

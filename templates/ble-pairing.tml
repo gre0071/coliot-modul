@@ -1,0 +1,13 @@
+[MAIN]
+TemplateName = BLEPairing
+TableName = siot_ble_pairing
+Enable = true
+
+[FIELDS]
+TIMESTAMP = time
+DEVICE_MAC = macaddr
+HCI_DEV_MAC = macaddr
+METHOD = uint8
+REPEATED = uint8
+SUCCESS = uint8
+VERSION = uint8

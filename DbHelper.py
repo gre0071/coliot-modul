@@ -63,6 +63,8 @@ class DbHelper:
         for arg in args:
             if arg.getName() == 'TIME':
                 attr = attr + "%s %s" % ('TIME', 'DATETIME')
+            elif arg.getName() == 'TIMESTAMP':
+                attr = attr + "%s %s" % ('TIMESTAMP', 'DATETIME')
             else:
                 attr = attr + "%s %s" % (arg.getName(), arg.getType())
             if not arg is args[-1]:
